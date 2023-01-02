@@ -27,7 +27,7 @@ function App() {
       console.log(bigURL);
       try{
           Axios.post(
-            'http://ec2-43-205-118-139.ap-south-1.compute.amazonaws.com/api/v1/:1',
+            "http://ec2-43-205-118-139.ap-south-1.compute.amazonaws.com/api/v1/:1",
             {url:bigURL}
           )
           .then(async res=> {
