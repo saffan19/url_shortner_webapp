@@ -24,11 +24,11 @@ function App() {
   const onSubmit = async (e) =>
   {
       e.preventDefault();
-      
+      console.log(bigURL);
       try{
           Axios.post(
             'http://ec2-43-205-118-139.ap-south-1.compute.amazonaws.com/api/v1/',
-            {"url":bigURL}
+            {url:bigURL}
           )
           .then(async res=> {
               console.log(res);
