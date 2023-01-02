@@ -45,6 +45,9 @@ label{
   margin-top: 1%;
   margin-bottom: 1%;  
 }
+input{
+  width: 250px;
+}
 
 button{
   margin-top: 1%;
