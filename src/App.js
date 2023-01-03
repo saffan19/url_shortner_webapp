@@ -21,46 +21,19 @@ function App() {
   /////////////// API //////////////////////
 
 
-  // const onSubmit = async (e) =>
-  // {
-  //     e.preventDefault();
-  //     console.log(bigURL);
-  //     try{
-  //         Axios.post(
-  //           "http://ec2-43-205-118-139.ap-south-1.compute.amazonaws.com/api/v1/",
-  //           {url:bigURL}
-  //         )
-  //         .then(async res=> {
-  //             console.log(res);
-  //             const resp=JSON.parse(res);
-  //             setSmall(resp.short)
-  //         })
-  //     }
-  //     catch(e)
-  //     {
-          
-  //         console.log(e)
-          
-  //     }      
-  // }
-
   const onSubmit = async (e) =>
   {
       e.preventDefault();
       console.log(bigURL);
-
-      const url="http://cutt.ly/api/api.php?key=1edb143b63326b465e8eaae897e07c377f557&short="+bigURL+"&userDomain=0";
-      console.log(url);
       try{
-          Axios.get(
-            url
+          Axios.post(
+            "http://ec2-43-205-118-139.ap-south-1.compute.amazonaws.com/api/v1/",
+            {url:bigURL}
           )
           .then(async res=> {
               console.log(res);
-              const resp=JSON.parse(JSON.stringify(res));
-              console.log(resp);
-              console.log(resp.data.url.shortLink)
-              setSmall(resp.data.url.shortLink)
+              const resp=JSON.parse(res);
+              setSmall(resp.short)
           })
       }
       catch(e)
@@ -70,6 +43,33 @@ function App() {
           
       }      
   }
+
+  // const onSubmit = async (e) =>
+  // {
+  //     e.preventDefault();
+  //     console.log(bigURL);
+
+  //     const url="http://cutt.ly/api/api.php?key=1edb143b63326b465e8eaae897e07c377f557&short="+bigURL+"&userDomain=0";
+  //     console.log(url);
+  //     try{
+  //         Axios.get(
+  //           url
+  //         )
+  //         .then(async res=> {
+  //             console.log(res);
+  //             const resp=JSON.parse(JSON.stringify(res));
+  //             console.log(resp);
+  //             console.log(resp.data.url.shortLink)
+  //             setSmall(resp.data.url.shortLink)
+  //         })
+  //     }
+  //     catch(e)
+  //     {
+          
+  //         console.log(e)
+          
+  //     }      
+  // }
 
 
 
